@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnbkajtr1t6hg"]
+
+[node name="luz_global" type="DirectionalLight2D" unique_id=1020887460]
+rotation = -0.4607669
+color = Color(0.75552386, 0.5791164, 0.16487995, 1)
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 6.9

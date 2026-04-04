@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dmg8gaqu60dw0"]
+
+[ext_resource type="Script" uid="uid://caiibcaxm2ft5" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/espreitador.gd" id="1_wijxc"]
+[ext_resource type="Texture2D" uid="uid://dx5x41yu6nuq7" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-0.png" id="2_thhd6"]
+[ext_resource type="Texture2D" uid="uid://dnk5h8pmroucs" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-1.png" id="3_7mtlc"]
+[ext_resource type="Texture2D" uid="uid://bkn7fm6am40gi" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-2.png" id="4_7ve7u"]
+[ext_resource type="Texture2D" uid="uid://doqy7dd13ejjs" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-3.png" id="5_kkw1t"]
+[ext_resource type="Texture2D" uid="uid://b6k58l7k81pcg" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-4.png" id="6_enc0e"]
+[ext_resource type="Texture2D" uid="uid://f45ujnse3j3p" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-5.png" id="7_ckt50"]
+[ext_resource type="Texture2D" uid="uid://cei12e02vdpvl" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/stay/pixil-frame-0.png" id="8_7ve7u"]
+[ext_resource type="Texture2D" uid="uid://caicyuwuke473" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/stay/pixil-frame-1.png" id="9_kkw1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy22a"]
+size = Vector2(19, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21qkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_thhd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7mtlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7ve7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kkw1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_enc0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ckt50")
+}],
+"loop": true,
+"name": &"andar",
+"speed": 11.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7ve7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kkw1t")
+}],
+"loop": true,
+"name": &"ficar",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ve7u"]
+size = Vector2(26, 24.25)
+
+[node name="enemy" type="CharacterBody2D" unique_id=711407830]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_wijxc")
+
+[node name="Timer" type="Timer" parent="." unique_id=142059328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=274951522]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_sy22a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1380061866]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_21qkx")
+animation = &"ficar"
+frame_progress = 0.068554774
+
+[node name="kill" type="Area2D" parent="." unique_id=1356873191]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill" unique_id=1644186110]
+position = Vector2(0, 3.875)
+shape = SubResource("RectangleShape2D_7ve7u")
+debug_color = Color(0.7633219, 0.2347421, 0.19946441, 0.41960785)

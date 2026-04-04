@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cbjcris1yq1rg"
+path="res://.godot/imported/freesound_community-fx-time-freeze-107808 (1).mp3-53774148cf6965a3d6b1b6390abcae1a.mp3str"
+
+[deps]
+
+source_file="res://JumpOfThePigeon/objetos/player/sounds/freesound_community-fx-time-freeze-107808 (1).mp3"
+dest_files=["res://.godot/imported/freesound_community-fx-time-freeze-107808 (1).mp3-53774148cf6965a3d6b1b6390abcae1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

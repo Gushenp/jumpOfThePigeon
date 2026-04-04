@@ -1,0 +1,14 @@
+CollisionShape2D
+Area2D
+Node2D
+MarginContainer
+AnimationPlayer
+CenterContainer
+TextureRect
+VBoxContainer
+AspectRatioContainer
+Container
+HBoxContainer
+Label
+CPUParticles2D
+GPUParticles2D

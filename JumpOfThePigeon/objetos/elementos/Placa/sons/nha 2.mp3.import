@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1mnr3fn1n1ar"
+path="res://.godot/imported/nha 2.mp3-6bf05dca71c296a4dc975827638d8aad.mp3str"
+
+[deps]
+
+source_file="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 2.mp3"
+dest_files=["res://.godot/imported/nha 2.mp3-6bf05dca71c296a4dc975827638d8aad.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

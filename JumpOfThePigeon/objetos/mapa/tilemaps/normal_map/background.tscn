@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://3t072qrb4r65"]
+
+[ext_resource type="Texture2D" uid="uid://bny8fa3fcr01x" path="res://JumpOfThePigeon/objetos/mapa/sprites/background.png" id="1_tgqcj"]
+
+[node name="background" type="Sprite2D" unique_id=685070266]
+texture = ExtResource("1_tgqcj")

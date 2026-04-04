@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bedebphqodgqr"]
+
+[ext_resource type="Texture2D" uid="uid://j0rrqa3lfxtq" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/caixa Dialogo/pixil-frame-0.png" id="1_f3jqg"]
+[ext_resource type="Texture2D" uid="uid://xyssy4fkkods" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/caixa Dialogo/pixil-frame-1.png" id="2_xf6h7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0i4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f3jqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xf6h7")
+}],
+"loop": true,
+"name": &"A",
+"speed": 4.0
+}]
+
+[node name="anim_a" type="AnimatedSprite2D" unique_id=726387642]
+sprite_frames = SubResource("SpriteFrames_w0i4r")
+animation = &"A"
+frame_progress = 0.28209597
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=89351377]
