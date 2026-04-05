@@ -1,15 +1,3 @@
 [gd_scene format=3 uid="uid://d6baboimu1mj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk2gc"]
-size = Vector2(57, 61)
-
 [node name="camera_move" type="Node2D" unique_id=1979925334]
-
-[node name="move1" type="Area2D" parent="." unique_id=1463932305]
-z_index = 1
-position = Vector2(116, 249)
-
-[node name="collision_zoom" type="CollisionShape2D" parent="move1" unique_id=1199529688]
-position = Vector2(-117, -249)
-shape = SubResource("RectangleShape2D_sk2gc")
-debug_color = Color(0, 0, 0, 0.48235294)

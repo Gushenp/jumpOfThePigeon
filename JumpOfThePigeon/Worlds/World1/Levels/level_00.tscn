@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://eplid6jvyfrn"]
 
-[ext_resource type="Script" uid="uid://bhbgtj1o583mn" path="res://JumpOfThePigeon/objetos/fases/scrpits/base_fundamental.gd" id="1_b1yl4"]
+[ext_resource type="Script" uid="uid://bhbgtj1o583mn" path="res://JumpOfThePigeon/Worlds/World1/Levels/level1/level1.gd" id="1_b1yl4"]
 [ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/objetos/player/player.tscn" id="2_3l80e"]
 [ext_resource type="PackedScene" uid="uid://ux5kparwwtrx" path="res://JumpOfThePigeon/objetos/camera/main/camera.tscn" id="3_v442l"]
 [ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/normal_map/norma_tilemap.tscn" id="4_wnv12"]

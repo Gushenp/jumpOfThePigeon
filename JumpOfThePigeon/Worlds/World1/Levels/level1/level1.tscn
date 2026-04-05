@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://bxp0i42rotfuo"]
 
-[ext_resource type="Script" uid="uid://bhbgtj1o583mn" path="res://JumpOfThePigeon/objetos/fases/scrpits/base_fundamental.gd" id="1_huqvy"]
+[ext_resource type="Script" uid="uid://bhbgtj1o583mn" path="res://JumpOfThePigeon/Worlds/World1/Levels/level1/level1.gd" id="1_huqvy"]
 [ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/objetos/player/player.tscn" id="2_5lxtq"]
 [ext_resource type="PackedScene" uid="uid://ux5kparwwtrx" path="res://JumpOfThePigeon/objetos/camera/main/camera.tscn" id="3_5b2id"]
 [ext_resource type="PackedScene" uid="uid://d6baboimu1mj" path="res://JumpOfThePigeon/objetos/camera/camera_move/camera_move.tscn" id="4_74sll"]
 [ext_resource type="Script" uid="uid://bq1ki8o1makyq" path="res://JumpOfThePigeon/objetos/elementos/scripts/elementos_globais.gd" id="4_movij"]
 [ext_resource type="AudioStream" uid="uid://c08mai12q63hx" path="res://JumpOfThePigeon/objetos/mapa/sounds/Oficial.mp3" id="5_3so28"]
 [ext_resource type="Script" uid="uid://b0s31ju4e5l14" path="res://JumpOfThePigeon/objetos/mapa/scripts/normal_map.gd" id="5_5lxtq"]
-[ext_resource type="PackedScene" uid="uid://3t072qrb4r65" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/background.tscn" id="6_movij"]
+[ext_resource type="PackedScene" uid="uid://dbq8bn46up270" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/background.tscn" id="6_movij"]
 [ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/normal_map/norma_tilemap.tscn" id="7_n5omb"]
 [ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/luz_global.tscn" id="8_vy50r"]
 [ext_resource type="PackedScene" uid="uid://5pb1rwokd86e" path="res://JumpOfThePigeon/objetos/mapa/particulas/normal_map/folhas.tscn" id="9_f65et"]
@@ -18,6 +18,15 @@
 [ext_resource type="AudioStream" uid="uid://d17d0rbiert8d" path="res://JumpOfThePigeon/objetos/mapa/sounds/deep.mp3" id="12_5v1ei"]
 [ext_resource type="PackedScene" uid="uid://e0k0h4ncsrjw" path="res://JumpOfThePigeon/objetos/Interface/transições.tscn" id="13_opmjp"]
 [ext_resource type="Script" uid="uid://bkn4nwgfx81gv" path="res://JumpOfThePigeon/objetos/Interface/scripts/transições.gd" id="16_3so28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5omb"]
+size = Vector2(37, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy50r"]
+size = Vector2(20, 159)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f65et"]
+size = Vector2(105, 199)
 
 [sub_resource type="Gradient" id="Gradient_d3o83"]
 offsets = PackedFloat32Array(0, 0.51293105, 1)
@@ -37,7 +46,7 @@ script = ExtResource("1_huqvy")
 [node name="player" parent="." unique_id=1303017769 instance=ExtResource("2_5lxtq")]
 top_level = true
 light_mask = 0
-position = Vector2(143, 238)
+position = Vector2(141, 221)
 
 [node name="camera" parent="player" unique_id=2022583788 instance=ExtResource("3_5b2id")]
 zoom = Vector2(2, 2)
@@ -49,12 +58,25 @@ limit_bottom = 448
 
 [node name="camera_move" parent="map" unique_id=1979925334 instance=ExtResource("4_74sll")]
 
-[node name="move1" parent="map/camera_move" index="0" unique_id=1463932305]
-position = Vector2(296, 188)
+[node name="move1" type="Area2D" parent="map/camera_move" unique_id=1317090991]
+position = Vector2(269, 174)
 
-[node name="collision_zoom" parent="map/camera_move/move1" index="0" unique_id=1199529688]
-position = Vector2(-15.375, 19)
-one_way_collision = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/camera_move/move1" unique_id=1995845098]
+shape = SubResource("RectangleShape2D_n5omb")
+
+[node name="move2" type="Area2D" parent="map/camera_move" unique_id=780616973]
+position = Vector2(846, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/camera_move/move2" unique_id=2035137708]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_vy50r")
+
+[node name="move3" type="Area2D" parent="map/camera_move" unique_id=1884137304]
+position = Vector2(1735, 243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="map/camera_move/move3" unique_id=2036263111]
+position = Vector2(-2, -1)
+shape = SubResource("RectangleShape2D_f65et")
 
 [node name="elementos_globais" type="Node2D" parent="map" unique_id=1002683570]
 script = ExtResource("4_movij")
@@ -80,12 +102,8 @@ script = ExtResource("5_5lxtq")
 
 [node name="background" type="Node2D" parent="map/normal_map" unique_id=13132063]
 
-[node name="back" parent="map/normal_map/background" unique_id=685070266 instance=ExtResource("6_movij")]
-modulate = Color(0.8976601, 0.79634714, 0.66832906, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1136, 224)
-scale = Vector2(2.9583333, 1)
+[node name="Node2D" parent="map/normal_map/background" unique_id=564769574 instance=ExtResource("6_movij")]
+layer = -1
 
 [node name="tileMap" parent="map/normal_map" unique_id=373199258 instance=ExtResource("7_n5omb")]
 
@@ -99,7 +117,7 @@ tile_map_data = PackedByteArray("AAACAAYAAAAJAAEAAAADAAcAAAAJAAIAAAAEAAcAAAAJAAE
 tile_map_data = PackedByteArray("AAACAAMAAAAJAAEAAFACAAQAAAAJAAEAAFACAAUAAAAJAAEAAFACAAYAAAAJAAAAAFAGAA0AAAAJAAIAAFAHAAIAAAAJAAEAAFAIAAAAAAAJAAEAAFAIAAEAAAAJAAIAAFAIAAwAAAAJAAEAAFAKAAoAAAAJAAIAAFAKAAsAAAAJAAAAAFAOAAkAAAAJAAIAAFAOAAoAAAAJAAEAAFAOAAsAAAAJAAEAAFAOAAwAAAAJAAEAAFAOAA0AAAAJAAIAAFAOAA4AAAAJAAAAAFAPAAoAAAAJAAAAAEAPAAsAAAAJAAAAAEAPAAwAAAAJAAAAAEAPAA0AAAAJAAAAAEARAAEAAAAJAAEAAEARAAIAAAAJAAEAAEARAAMAAAAJAAAAAEASAAwAAAAJAAEAAFASAA0AAAAJAAEAAFATAAsAAAAJAAAAAEATAAwAAAAJAAEAAEAUAAUAAAAJAAEAAEAUAA0AAAAJAAAAAEAaAAoAAAAJAAAAAFAcAAsAAAAJAAAAAFAcAAwAAAAJAAAAAFAcAA0AAAAJAAEAAFAdAAMAAAAJAAEAAFAdAAQAAAAJAAEAAFAdAAoAAAAJAAEAAEAdAAsAAAAJAAIAAEAdAAwAAAAJAAEAAEAhAAoAAAAJAAEAAFAhAAsAAAAJAAAAAFAiAAgAAAAJAAEAAEAiAAkAAAAJAAAAAEAlAP//AAAJAAIAAEAlAAAAAAAJAAAAAEAlAAEAAAAJAAAAAEAlAAgAAAAJAAAAAFAlAAkAAAAJAAEAAFAmAAgAAAAJAAAAAEAmAAkAAAAJAAAAAEAnAAIAAAAJAAEAAEAnAAcAAAAJAAEAAEArAAcAAAAJAAEAAFArAAgAAAAJAAEAAFArAAkAAAAJAAIAAFArAAoAAAAJAAEAAFArAAsAAAAJAAAAAFArAAwAAAAJAAAAAFArAA0AAAAJAAEAAFAtAAgAAAAJAAAAAEAtAAkAAAAJAAIAAEAwAAIAAAAJAAEAAFAxAAAAAAAJAAIAAFAxAAEAAAAJAAEAAFAxAAcAAAAJAAIAAFAzAAgAAAAJAAEAAFAzAAkAAAAJAAIAAFA0AAoAAAAJAAIAAFA0AAsAAAAJAAAAAFA0AAwAAAAJAAIAAFA0AA0AAAAJAAIAAFA3AAoAAAAJAAIAAEA3AAsAAAAJAAEAAEA5AA0AAAAJAAAAAEA6AAkAAAAJAAAAAEA7AAgAAAAJAAEAAEA8AAAAAAAJAAAAAEA8AAEAAAAJAAEAAEA8AAIAAAAJAAIAAEA=")
 
 [node name="pendentes" parent="map/normal_map/tileMap" index="3" unique_id=981553471]
-tile_map_data = PackedByteArray("AAACAAMAAAAFAAIAAAACAAQAAAAGAAEAAAADAAMAAAAHAAAAAAADAAQAAAAHAAEAAAAJAAwAAAAFAAEAAAAJAA0AAAAFAAIAAAALAAwAAAAFAAIAAAASAAQAAAAFAAEAAAASAAUAAAAFAAIAAAASAAwAAAAEAAIAAAAUAAUAAAAEAAEAAAAUAAYAAAAEAAIAAAAXAAYAAAAFAAEAAAAXAAcAAAAFAAIAAAAYAAYAAAAFAAIAAAAcAAUAAAAFAAIAAAAfAA0AAAAFAAIAAAAgAAwAAAAFAAIAAAAkAAoAAAAFAAEAAAAkAAsAAAAFAAIAAAAmAAIAAAAEAAEAAAAmAAMAAAAEAAIAAAAnAAoAAAAEAAEAAAAnAAsAAAAEAAIAAAAoAAMAAAAFAAEAAAAoAAQAAAAFAAIAAAAoAAsAAAAFAAEAAAAoAAwAAAAFAAIAAAApAAMAAAAFAAIAAAArAAMAAAAEAAIAAAAsAAMAAAAEAAEAAAAsAAQAAAAEAAIAAAAuAAMAAAAEAAAAAAAuAAoAAAAFAAEAAAAuAAsAAAAFAAIAAAAvAAMAAAAFAAAAAAAvAAwAAAAFAAIAAAA4AAwAAAAFAAIAAAA9AAMAAAAFAAEAAAA9AAQAAAAFAAIAAAA/AAQAAAAFAAIAAABBAAQAAAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAAwAAAAFAAEAAAAJAA0AAAAFAAIAAAALAAwAAAAFAAIAAAACAAMAAAAFAAIAAAACAAQAAAAGAAEAAAADAAMAAAAHAAAAAAADAAQAAAAHAAEAAAASAAQAAAAFAAEAAAASAAUAAAAFAAIAAAASAAwAAAAEAAIAAAAUAAUAAAAEAAEAAAAUAAYAAAAEAAIAAAAXAAYAAAAFAAEAAAAXAAcAAAAFAAIAAAAYAAYAAAAFAAIAAAAcAAUAAAAFAAIAAAAfAA0AAAAFAAIAAAAgAAwAAAAFAAIAAAAkAAoAAAAFAAEAAAAkAAsAAAAFAAIAAAAmAAIAAAAEAAEAAAAmAAMAAAAEAAIAAAAnAAoAAAAEAAEAAAAnAAsAAAAEAAIAAAAoAAMAAAAFAAEAAAAoAAQAAAAFAAIAAAAoAAsAAAAFAAEAAAAoAAwAAAAFAAIAAAApAAMAAAAFAAIAAAArAAMAAAAEAAIAAAAsAAMAAAAEAAEAAAAsAAQAAAAEAAIAAAAuAAMAAAAEAAAAAAAuAAoAAAAFAAEAAAAuAAsAAAAFAAIAAAAvAAMAAAAFAAAAAAAvAAwAAAAFAAIAAAA4AAwAAAAFAAIAAAA9AAMAAAAFAAEAAAA9AAQAAAAFAAIAAAA/AAQAAAAFAAIAAABBAAQAAAAEAAAAAAA=")
 
 [node name="arbustos" parent="map/normal_map/tileMap" index="4" unique_id=1198152538]
 tile_map_data = PackedByteArray("AAACAAUAAAAFAAUAAAACAAYAAAAFAAYAAAACAAcAAAAFAAcAAAACAAgAAAAFAAgAAAADAAMAAAAEAAUAAGADAAUAAAAEAAUAAFADAAYAAAAEAAcAAFADAAcAAAAFAAYAAFAEAAMAAAAEAAcAAGAEAAQAAAAEAAUAAGAEAAYAAAAEAAUAABAEAAcAAAAEAAYAABAFAAMAAAAFAAcAAAAFAAQAAAAFAAUAADAGAAIAAAAFAAgAAAAGAAMAAAAEAAcAADAGAAQAAAAEAAUAADAHAAEAAAAFAAgAAAAHAAIAAAAFAAYAADAHAAMAAAAFAAUAADAHAAYAAAAEAAUAAAAHAAcAAAAEAAYAAAAHAAgAAAAFAAgAAAAIAAEAAAAEAAUAAFAIAAIAAAAEAAYAADAIAAMAAAAEAAUAADAIAAYAAAAFAAUAAAAIAAcAAAAFAAYAAAAIAAgAAAAFAAcAAAAJAAYAAAAEAAUAAFAJAAcAAAAEAAcAAFAJAAgAAAAFAAYAAFAJAAkAAAAFAAgAAAAKAAcAAAAEAAUAABAKAAgAAAAEAAYAABAKAAkAAAAEAAUAADAQAAAAAAAEAAYAAAAQAAEAAAAEAAUAAGAQAAMAAAAEAAUAAAAQAAQAAAAEAAYAACAQAAUAAAAEAAUAACARAAAAAAAFAAYAAGARAAEAAAAEAAcAAGARAAIAAAAEAAYAACARAAMAAAAEAAcAAAARAAQAAAAFAAYAACARAAUAAAAFAAUAACASAAMAAAAFAAgAAAASAAQAAAAFAAYAAAASAAUAAAAEAAcAACASAAYAAAAEAAYAACASAAcAAAAEAAUAACATAAQAAAAFAAgAAAATAAUAAAAFAAcAAAATAAYAAAAFAAYAACATAAcAAAAFAAUAACAUAAUAAAAFAAcAAAAUAAYAAAAEAAcAADAUAAcAAAAEAAUAADAVAAUAAAAFAAgAAAAVAAYAAAAFAAUAACAWAAYAAAAEAAUAAHAWAAgAAAAAAAQAAAAWAAkAAAAAAAUAAAAXAAgAAAABAAQAAAAXAAkAAAABAAUAAAAXAAoAAAACAAQAAAAYAAYAAAAEAAUAAGAYAAgAAAACAAQAAAAYAAkAAAACAAUAAAAZAAYAAAAEAAcAACAZAAcAAAAEAAUAACAaAAYAAAAFAAYAADAaAAcAAAAFAAUAADAbAAUAAAAFAAgAAAAbAAYAAAAEAAcAADAbAAcAAAAEAAUAADAcAAQAAAAFAAgAAAAcAAUAAAAFAAYAADAcAAYAAAAFAAUAADAdAAIAAAAGAAUAAFAdAAMAAAAGAAUAAFAdAAQAAAAGAAUAAFAdAAUAAAAEAAYAADAdAAYAAAAEAAUAADAdAAkAAAAEAAUAAAAdAAoAAAAEAAYAAAAdAAsAAAAEAAUAAGAeAAkAAAAFAAUAAAAeAAoAAAAFAAYAAAAfAAkAAAAEAAUAAFAfAA0AAAAEAAUAAGAgAAkAAAAEAAUAAAAgAAoAAAAFAAgAAAAgAAsAAAAFAAgAAAAgAAwAAAAFAAYAADAgAA0AAAAFAAUAADAhAAkAAAAEAAYAAFAhAAoAAAAFAAYAAAAhAAsAAAAEAAcAADAhAAwAAAAEAAYAADAhAA0AAAAEAAUAADAiAAkAAAAEAAUAAFAiAAoAAAAEAAYAADAiAAsAAAAEAAUAADAmAAIAAAAEAAYAACAmAAMAAAAEAAUAACAmAAgAAAAEAAUAAAAmAAkAAAAEAAYAACAmAAoAAAAEAAUAACAnAAIAAAAFAAYAACAnAAMAAAAFAAUAACAnAAkAAAAFAAYAACAnAAoAAAAEAAcAAGAnAAsAAAAEAAYAACAnAAwAAAAEAAUAACAoAAIAAAAFAAcAAAAoAAMAAAAFAAUAADAoAAoAAAAFAAgAAAAoAAsAAAAFAAYAACAoAAwAAAAFAAUAACApAAIAAAAFAAgAAAApAAMAAAAEAAcAAGApAAQAAAAEAAUAAGAqAAMAAAAFAAYAAGAqAAQAAAAFAAUAADArAAMAAAAFAAcAAAArAAQAAAAEAAcAAGArAAUAAAAEAAUAAGArAAsAAAAEAAUAAFArAAwAAAAEAAYAADArAA0AAAAEAAYAADAsAAMAAAAFAAcAAAAsAAQAAAAFAAcAAAAsAAUAAAAFAAUAADAtAAMAAAAFAAcAAAAtAAQAAAAFAAYAADAtAAUAAAAFAAUAADAtAAcAAAAEAAUAAAAtAAgAAAAEAAYAAAAtAAkAAAAEAAYAAAAtAAoAAAAEAAUAAGAuAAIAAAAFAAgAAAAuAAMAAAAFAAcAAAAuAAQAAAAEAAcAADAuAAUAAAAEAAUAADAuAAcAAAAFAAUAAAAuAAgAAAAFAAYAAAAuAAkAAAAFAAgAAAAuAAoAAAAEAAcAAGAuAAsAAAAEAAUAAGAvAAIAAAAFAAgAAAAvAAMAAAAFAAYAAGAvAAQAAAAFAAUAADAwAAEAAAAFAAgAAAAwAAIAAAAFAAcAAAAwAAMAAAAFAAYAAHAwAAQAAAAEAAYAAHAxAAEAAAAEAAUAAFAxAAIAAAAFAAUAAFAxAAMAAAAFAAUAAHAxAAQAAAAEAAUAAHAzAAgAAAAFAAUAABAzAAkAAAAFAAYAABAzAAoAAAAFAAgAAAA0AAgAAAAEAAUAABA0AAkAAAAEAAYAABA0AAoAAAAFAAUAAFA0AAsAAAAEAAUAADA2AAwAAAAEAAUAAAA2AA0AAAAEAAYAAAA3AAkAAAAEAAUAAAA3AAoAAAAEAAYAAAA3AAsAAAAFAAUAAGA3AAwAAAAEAAcAAEA3AA0AAAAFAAYAAAA4AAkAAAAFAAUAAAA4AAoAAAAFAAYAAAA4AAsAAAAFAAcAAAA4AAwAAAAFAAcAAAA4AA0AAAAFAAcAAAA5AAkAAAAEAAUAAFA5AAoAAAAFAAgAAAA5AAwAAAAFAAgAAAA5AA0AAAAFAAcAAAA7AAAAAAAEAAYAAAA7AAEAAAAEAAYAAAA7AAIAAAAEAAUAAGA7AAcAAAAEAAUAAEA7AAgAAAAFAAUAAEA8AAAAAAAFAAcAAAA8AAEAAAAFAAcAAAA8AAIAAAAEAAcAAGA8AAMAAAAFAAUAAGA8AAQAAAAEAAUAAGA8AAcAAAAEAAYAAEA8AAgAAAAFAAYAAEA9AAEAAAAFAAgAAAA9AAIAAAAFAAgAAAA9AAMAAAAFAAYAAGA9AAQAAAAEAAYAAGA9AAcAAAAFAAUAAAA+AAMAAAAFAAgAAAA+AAQAAAAFAAUAADA+AAYAAAAEAAUAAAA+AAcAAAAEAAcAAAA/AAQAAAAEAAUAADA/AAYAAAAFAAUAAAA/AAcAAAAFAAYAAABAAAQAAAAFAAUAAGBAAAUAAAAEAAUAAGBAAAYAAAAFAAUAAABAAAcAAAAFAAcAAABBAAQAAAAFAAcAAABBAAUAAAAEAAcAAGBBAAYAAAAEAAcAAABBAAcAAAAFAAcAAABCAAQAAAAFAAgAAABCAAUAAAAFAAcAAABCAAYAAAAFAAcAAABCAAcAAAAFAAcAAABDAAcAAAAFAAgAAABDAAYAAAAFAAgAAABDAAUAAAAFAAgAAABEAAUAAAAFAAgAAABEAAYAAAAFAAgAAABEAAcAAAAFAAgAAABFAAcAAAAFAAgAAABFAAYAAAAFAAgAAABFAAUAAAAFAAgAAABGAAUAAAAFAAgAAABGAAYAAAAFAAgAAABGAAcAAAAFAAgAAAA=")
@@ -108,30 +126,40 @@ tile_map_data = PackedByteArray("AAACAAUAAAAFAAUAAAACAAYAAAAFAAYAAAACAAcAAAAFAAc
 
 [node name="luz_global" parent="map/normal_map/luz_e_sombra" unique_id=1020887460 instance=ExtResource("8_vy50r")]
 rotation = -0.4537856
-color = Color(0.3376347, 0.25211775, 0.050238475, 1)
-energy = 0.8
+color = Color(0.34884256, 0.24571854, 0.05450833, 1)
+range_layer_min = -1
+range_item_cull_mask = 3
 
 [node name="pontos_reflexo" type="Node2D" parent="map/normal_map/luz_e_sombra" unique_id=1624409567]
 
 [node name="PointLight2D" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1578810614]
-position = Vector2(392.44745, 224.48595)
+position = Vector2(355.00003, 227)
 rotation = -0.344769
 scale = Vector2(9.557408, 11.003679)
-energy = 0.5
+energy = 0.2
+range_layer_min = -1
+texture = SubResource("GradientTexture2D_sk2gc")
+
+[node name="PointLight2D5" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1268878612]
+position = Vector2(700.00006, 257.00006)
+rotation = -0.344769
+scale = Vector2(9.557408, 11.003679)
+energy = 0.2
+range_layer_min = -1
 texture = SubResource("GradientTexture2D_sk2gc")
 
 [node name="PointLight2D2" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1589411636]
-position = Vector2(1111, 236.00002)
+position = Vector2(1017.0001, 267)
 rotation = -0.344769
 scale = Vector2(9.557408, 11.003679)
-energy = 0.5
+energy = 0.2
 texture = SubResource("GradientTexture2D_sk2gc")
 
-[node name="PointLight2D3" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1165715806]
-position = Vector2(1784.1633, 221.7783)
+[node name="PointLight2D4" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=237754288]
+position = Vector2(1415, 197)
 rotation = -0.344769
-scale = Vector2(9.989961, 11.476937)
-energy = 0.5
+scale = Vector2(9.557408, 11.003679)
+energy = 0.2
 texture = SubResource("GradientTexture2D_sk2gc")
 
 [node name="particulas" type="Node2D" parent="map/normal_map" unique_id=1367572479]
@@ -215,13 +243,6 @@ script = ExtResource("11_5b2id")
 
 [node name="background" type="Node2D" parent="map/other_map" unique_id=1996639331]
 
-[node name="back" parent="map/other_map/background" unique_id=632610991 instance=ExtResource("6_movij")]
-modulate = Color(0.8976601, 0.79634714, 0.66832906, 1)
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1139, 222)
-scale = Vector2(2.9531252, 1)
-
 [node name="tileMap" parent="map/other_map" unique_id=1306080712 instance=ExtResource("11_adbjf")]
 
 [node name="luz_e_sombra" type="Node2D" parent="map/other_map" unique_id=310826838]
@@ -243,7 +264,7 @@ script = ExtResource("16_3so28")
 [node name="Transições" parent="transições" unique_id=409224042 instance=ExtResource("13_opmjp")]
 
 [node name="ColorRect" parent="transições/Transições" index="0" unique_id=1042860171]
-color = Color(0.16, 0.09616, 0.0688, 1)
+color = Color(0.16078432, 0.09803922, 0.07058824, 1)
 
 [node name="saída" type="Area2D" parent="transições" unique_id=1700254749]
 position = Vector2(2148, 162)
@@ -256,6 +277,10 @@ debug_color = Color(0, 0.5950001, 0.7, 0.7490196)
 
 [connection signal="body_entered" from="map/camera_move/move1" to="player/camera" method="_on_move_1_body_entered"]
 [connection signal="body_exited" from="map/camera_move/move1" to="player/camera" method="_on_move_1_body_exited"]
+[connection signal="body_entered" from="map/camera_move/move2" to="player/camera" method="_on_move_2_body_entered"]
+[connection signal="body_exited" from="map/camera_move/move2" to="player/camera" method="_on_move_2_body_exited"]
+[connection signal="body_entered" from="map/camera_move/move3" to="player/camera" method="_on_move_3_body_entered"]
+[connection signal="body_exited" from="map/camera_move/move3" to="player/camera" method="_on_move_3_body_exited"]
 [connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
 
 [editable path="map/camera_move"]

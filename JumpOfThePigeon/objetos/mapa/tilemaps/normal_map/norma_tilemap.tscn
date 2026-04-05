@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://rys47fjeuwpu"]
 
 [ext_resource type="Texture2D" uid="uid://lu7qwa3bakd3" path="res://JumpOfThePigeon/objetos/mapa/sprites/mapa_tilemap.png" id="1_5ugrq"]
+[ext_resource type="Shader" uid="uid://1xkvt0g2l0lg" path="res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_x.gdshader" id="2_qxc8h"]
 [ext_resource type="Shader" uid="uid://bo2vhx3h2hjrk" path="res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_y.gdshader" id="3_c160o"]
 [ext_resource type="Shader" uid="uid://b3o5ffab34f5c" path="res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/pendentes.gdshader" id="3_k3pqb"]
 
@@ -93,38 +94,11 @@ physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 sources/1 = SubResource("TileSetAtlasSource_d3r0w")
 
-[sub_resource type="Shader" id="Shader_7f0xg"]
-code = "shader_type canvas_item;
-
-// intensidade do balanço
-uniform float intensidade = 0.05;
-
-// velocidade do vento
-uniform float velocidade = 1.5;
-
-// frequência das ondas
-uniform float frequencia = 3.0;
-
-// direção do vento
-uniform vec2 direcao = vec2(1.0, 0.0);
-
-void vertex() {
-    // quanto mais perto da ponta (embaixo), mais balança
-    float peso = UV.y;
-
-    // movimento de onda baseado no tempo
-    float onda = sin(TIME * velocidade + UV.y * frequencia) * intensidade;
-
-    // aplica deslocamento na posição do vértice
-    VERTEX.xy += direcao * onda * peso;
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c160o"]
-shader = SubResource("Shader_7f0xg")
-shader_parameter/intensidade = 2.5
-shader_parameter/velocidade = 1.5
-shader_parameter/frequencia = 3.0
-shader_parameter/direcao = Vector2(1, 0)
+shader = ExtResource("2_qxc8h")
+shader_parameter/amplitude = 5.5370002630075
+shader_parameter/speed = 1.5350000729125
+shader_parameter/stiffness = 0.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82fv2"]
 texture = ExtResource("1_5ugrq")
@@ -140,9 +114,9 @@ sources/0 = SubResource("TileSetAtlasSource_82fv2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qy8ad"]
 shader = ExtResource("3_c160o")
-shader_parameter/intensidade = 10.0
-shader_parameter/velocidade = 1.5
-shader_parameter/escala_onda = 1.5
+shader_parameter/amplitude = 5.0
+shader_parameter/speed = 1.5
+shader_parameter/stiffness = 0.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eeu2t"]
 texture = ExtResource("1_5ugrq")
@@ -158,10 +132,9 @@ sources/0 = SubResource("TileSetAtlasSource_eeu2t")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k3pqb"]
 shader = ExtResource("3_k3pqb")
-shader_parameter/intensidade = 0.05
-shader_parameter/velocidade = 1.5
-shader_parameter/frequencia = 3.0
-shader_parameter/tile_size = Vector2(32, 32)
+shader_parameter/amplitude = 30.0
+shader_parameter/speed = 3.7250001769375
+shader_parameter/stiffness = 0.5750000273125
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tknk"]
 texture = ExtResource("1_5ugrq")

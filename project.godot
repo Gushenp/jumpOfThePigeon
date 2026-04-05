@@ -14,10 +14,16 @@ config/name="Jump Of The Pigeon"
 run/main_scene="uid://bxp0i42rotfuo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+menager_music_world1="*uid://conp02afgi7ii"
+MenagerBackgroundtransition="*uid://uf4kkqjxw4oa"
+
 [display]
 
 window/size/viewport_width=768
 window/size/viewport_height=448
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
