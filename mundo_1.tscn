@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cjnuri82i83oo"]
+
+[ext_resource type="PackedScene" uid="uid://bvlb570oxyf3h" path="res://JumpOfThePigeon/Worlds/World1/Levels/level_1.tscn" id="1_2qb77"]
+[ext_resource type="PackedScene" uid="uid://cf4w6kkvln0g4" path="res://JumpOfThePigeon/Worlds/World1/Levels/level_2.tscn" id="2_ubft0"]
+
+[node name="Mundo1" type="Node2D" unique_id=933479902]
+
+[node name="Level_1" parent="." unique_id=926925272 instance=ExtResource("1_2qb77")]
+
+[node name="Level_2" parent="." unique_id=2012247957 instance=ExtResource("2_ubft0")]
+visible = false
