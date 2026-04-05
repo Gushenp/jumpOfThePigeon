@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://d3sxkcq1wws4i"]
+
+[ext_resource type="Script" uid="uid://bhbgtj1o583mn" path="res://JumpOfThePigeon/objetos/fases/scrpits/base_fundamental.gd" id="1_0clu8"]
+[ext_resource type="PackedScene" uid="uid://dithipif5qr6i" path="res://JumpOfThePigeon/objetos/player/player.tscn" id="2_s5psm"]
+[ext_resource type="PackedScene" uid="uid://ux5kparwwtrx" path="res://JumpOfThePigeon/objetos/camera/main/camera.tscn" id="3_y6kvb"]
+[ext_resource type="PackedScene" uid="uid://d6baboimu1mj" path="res://JumpOfThePigeon/objetos/camera/camera_move/camera_move.tscn" id="4_dguv3"]
+[ext_resource type="PackedScene" uid="uid://3t072qrb4r65" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/background.tscn" id="5_k82r2"]
+[ext_resource type="PackedScene" uid="uid://rys47fjeuwpu" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/normal_map/norma_tilemap.tscn" id="6_g07ad"]
+[ext_resource type="PackedScene" uid="uid://cnbkajtr1t6hg" path="res://JumpOfThePigeon/objetos/mapa/iluminação/normal_map/luz_global.tscn" id="7_of780"]
+[ext_resource type="PackedScene" uid="uid://5pb1rwokd86e" path="res://JumpOfThePigeon/objetos/mapa/particulas/normal_map/folhas.tscn" id="8_lbtde"]
+[ext_resource type="PackedScene" uid="uid://yfe51b4xinoh" path="res://JumpOfThePigeon/objetos/mapa/tilemaps/other_map/other_tilemap.tscn" id="9_jyd51"]
+[ext_resource type="AudioStream" uid="uid://djcboj6dm0htc" path="res://JumpOfThePigeon/objetos/mapa/sounds/nature.mp3" id="10_g7k4b"]
+[ext_resource type="AudioStream" uid="uid://d17d0rbiert8d" path="res://JumpOfThePigeon/objetos/mapa/sounds/deep.mp3" id="11_jg2ss"]
+[ext_resource type="AudioStream" uid="uid://c08mai12q63hx" path="res://JumpOfThePigeon/objetos/mapa/sounds/Oficial.mp3" id="12_uu051"]
+[ext_resource type="PackedScene" uid="uid://e0k0h4ncsrjw" path="res://JumpOfThePigeon/objetos/Interface/transições.tscn" id="14_ifug6"]
+
+[sub_resource type="Gradient" id="Gradient_d3o83"]
+offsets = PackedFloat32Array(0, 0.51293105, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sk2gc"]
+gradient = SubResource("Gradient_d3o83")
+
+[node name="level_base" type="Node2D" unique_id=926925272]
+light_mask = 1023
+visibility_layer = 1023
+script = ExtResource("1_0clu8")
+
+[node name="player" parent="." unique_id=1303017769 instance=ExtResource("2_s5psm")]
+top_level = true
+light_mask = 0
+position = Vector2(130, 241)
+
+[node name="camera" parent="player" unique_id=2022583788 instance=ExtResource("3_y6kvb")]
+zoom = Vector2(2, 2)
+limit_left = -96
+limit_right = 2240
+limit_bottom = 448
+script = null
+
+[node name="camera_move" parent="." unique_id=1979925334 instance=ExtResource("4_dguv3")]
+
+[node name="map" type="Node2D" parent="." unique_id=850585338]
+
+[node name="elementos_globais" type="Node2D" parent="map" unique_id=1002683570]
+
+[node name="audios" type="Node2D" parent="map/elementos_globais" unique_id=656061716]
+
+[node name="oficial_music" type="AudioStreamPlayer" parent="map/elementos_globais/audios" unique_id=512050939]
+stream = ExtResource("12_uu051")
+volume_db = -10.0
+
+[node name="normal_map" type="Node2D" parent="map" unique_id=1634348116]
+modulate = Color(0.9164794, 0.8136174, 0.6144423, 1)
+light_mask = 1023
+visibility_layer = 1023
+
+[node name="background" type="Node2D" parent="map/normal_map" unique_id=13132063]
+
+[node name="back" parent="map/normal_map/background" unique_id=685070266 instance=ExtResource("5_k82r2")]
+modulate = Color(0.8976601, 0.79634714, 0.66832906, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1265, 224)
+scale = Vector2(3.294271, 1)
+
+[node name="other_tilemap" parent="map/normal_map" unique_id=373199258 instance=ExtResource("6_g07ad")]
+
+[node name="luz_e_sombra" type="Node2D" parent="map/normal_map" unique_id=842279432]
+
+[node name="luz_global" parent="map/normal_map/luz_e_sombra" unique_id=1020887460 instance=ExtResource("7_of780")]
+rotation = -0.4537856
+color = Color(0.3376347, 0.25211775, 0.050238475, 1)
+energy = 0.8
+
+[node name="pontos_reflexo" type="Node2D" parent="map/normal_map/luz_e_sombra" unique_id=1624409567]
+
+[node name="PointLight2D" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1578810614]
+position = Vector2(392.44745, 224.48595)
+rotation = -0.344769
+scale = Vector2(9.557408, 11.003679)
+energy = 0.5
+texture = SubResource("GradientTexture2D_sk2gc")
+
+[node name="PointLight2D2" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1589411636]
+position = Vector2(1111, 236.00002)
+rotation = -0.344769
+scale = Vector2(9.557408, 11.003679)
+energy = 0.5
+texture = SubResource("GradientTexture2D_sk2gc")
+
+[node name="PointLight2D3" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=1165715806]
+position = Vector2(1784.1633, 221.7783)
+rotation = -0.344769
+scale = Vector2(9.989961, 11.476937)
+energy = 0.5
+texture = SubResource("GradientTexture2D_sk2gc")
+
+[node name="particulas" type="Node2D" parent="map/normal_map" unique_id=1367572479]
+
+[node name="folhas" parent="map/normal_map/particulas" unique_id=692863183 instance=ExtResource("8_lbtde")]
+z_index = 1
+position = Vector2(123, 62)
+emission_shape = 3
+emission_rect_extents = Vector2(100, 1)
+scale_amount_min = 1.2
+scale_amount_max = 1.5
+color = Color(0.9603465, 0.6459293, 0.3376174, 1)
+
+[node name="audios" type="Node2D" parent="map/normal_map" unique_id=653993923]
+
+[node name="nature" type="AudioStreamPlayer" parent="map/normal_map/audios" unique_id=1076719619]
+stream = ExtResource("10_g7k4b")
+volume_db = -8.667
+
+[node name="other_map" type="Node2D" parent="map" unique_id=1527810247]
+modulate = Color(0.9164794, 0.8136174, 0.6144423, 1)
+light_mask = 1023
+visibility_layer = 1023
+
+[node name="background" type="Node2D" parent="map/other_map" unique_id=1996639331]
+
+[node name="back" parent="map/other_map/background" unique_id=632610991 instance=ExtResource("5_k82r2")]
+modulate = Color(0.8976601, 0.79634714, 0.66832906, 1)
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1265, 224)
+scale = Vector2(3.294271, 1)
+
+[node name="other_tilemap" parent="map/other_map" unique_id=1306080712 instance=ExtResource("9_jyd51")]
+
+[node name="luz_e_sombra" type="Node2D" parent="map/other_map" unique_id=310826838]
+
+[node name="pontos_reflexo" type="Node2D" parent="map/other_map/luz_e_sombra" unique_id=1078260886]
+
+[node name="pontos_luz" type="Node2D" parent="map/other_map/luz_e_sombra" unique_id=613272087]
+
+[node name="particulas" type="Node2D" parent="map/other_map" unique_id=672027227]
+
+[node name="audios" type="Node2D" parent="map/other_map" unique_id=1673540938]
+
+[node name="deep" type="AudioStreamPlayer" parent="map/other_map/audios" unique_id=1670742541]
+stream = ExtResource("11_jg2ss")
+
+[node name="transições" type="Node2D" parent="." unique_id=969052579]
+
+[node name="Transições" parent="transições" unique_id=409224042 instance=ExtResource("14_ifug6")]
+
+[node name="ColorRect" parent="transições/Transições" index="0" unique_id=1042860171]
+color = Color(0.16, 0.09616, 0.0688, 1)
+
+[node name="saída" type="Area2D" parent="transições" unique_id=1700254749]
+position = Vector2(2148, 162)
+
+[connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
+
+[editable path="transições/Transições"]

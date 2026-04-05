@@ -1,11 +1,11 @@
 [gd_scene format=4 uid="uid://dxynd1v4ma40y"]
 
-[ext_resource type="Texture2D" uid="uid://c2pb37ws0rym0" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/corpo/pixil-frame-0.png" id="1_rmqxr"]
-[ext_resource type="Script" uid="uid://bp4mhslboyajf" path="res://JumpOfThePigeon/objetos/elementos/Placa/placa.gd" id="1_t0g6y"]
-[ext_resource type="Texture2D" uid="uid://ne1arsou7k4a" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/corpo/pixil-frame-1.png" id="2_t0g6y"]
-[ext_resource type="AudioStream" uid="uid://dxf2g5v545cpm" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 3.mp3" id="4_c2r1r"]
-[ext_resource type="AudioStream" uid="uid://dwvjw8bagmstn" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 1.mp3" id="5_adgxl"]
-[ext_resource type="AudioStream" uid="uid://d1mnr3fn1n1ar" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 2.mp3" id="6_yt0lu"]
+[ext_resource type="Texture2D" uid="uid://c2pb37ws0rym0" path="res://JumpOfThePigeon/objetos/elementos/placa/sprites/corpo/pixil-frame-0.png" id="1_rmqxr"]
+[ext_resource type="Script" uid="uid://bp4mhslboyajf" path="res://JumpOfThePigeon/objetos/elementos/placa/scripts/placa.gd" id="1_t0g6y"]
+[ext_resource type="Texture2D" uid="uid://ne1arsou7k4a" path="res://JumpOfThePigeon/objetos/elementos/placa/sprites/corpo/pixil-frame-1.png" id="2_t0g6y"]
+[ext_resource type="AudioStream" uid="uid://dxf2g5v545cpm" path="res://JumpOfThePigeon/objetos/elementos/placa/sons/nha 3.mp3" id="4_c2r1r"]
+[ext_resource type="AudioStream" uid="uid://dwvjw8bagmstn" path="res://JumpOfThePigeon/objetos/elementos/placa/sons/nha 1.mp3" id="5_adgxl"]
+[ext_resource type="AudioStream" uid="uid://d1mnr3fn1n1ar" path="res://JumpOfThePigeon/objetos/elementos/placa/sons/nha 2.mp3" id="6_yt0lu"]
 [ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/objetos/player/sounds/aterrisar_ambiente.mp3" id="7_adgxl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w3qev"]

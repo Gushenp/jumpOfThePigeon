@@ -1,6 +1,3 @@
-res://JumpOfThePigeon/objetos/Interface/transicao.gdshader
-res://JumpOfThePigeon/Worlds/World1/Levels/level_1.tscn
-res://JumpOfThePigeon/objetos/fases/scrpits/base_fundamental.gd
-res://JumpOfThePigeon/objetos/Interface/transições.tscn
-res://JumpOfThePigeon/objetos/elementos/Placa/placa.tscn
-res://JumpOfThePigeon/Worlds/World1/Levels/level_2.tscn
+res://JumpOfThePigeon/Worlds/World1/Levels/level1/base.tscn
+res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader
+res://JumpOfThePigeon/objetos/mapa/tilemaps/normal_map/norma_tilemap.tscn

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxkry5er0d63v"
-path="res://.godot/imported/pixil-frame-6.png-ccdc538e46021a47c3215b90354e85f4.ctex"
+path="res://.godot/imported/pixil-frame-6.png-12f1e79167986a55babcdd38c90b7772.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/caixa Dialogo/pixil-frame-6.png"
-dest_files=["res://.godot/imported/pixil-frame-6.png-ccdc538e46021a47c3215b90354e85f4.ctex"]
+source_file="res://JumpOfThePigeon/objetos/elementos/placa/sprites/caixa Dialogo/pixil-frame-6.png"
+dest_files=["res://.godot/imported/pixil-frame-6.png-12f1e79167986a55babcdd38c90b7772.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://e0k0h4ncsrjw"]
 
-[ext_resource type="Shader" uid="uid://00cvlveynfd6" path="res://JumpOfThePigeon/objetos/Interface/transicao.gdshader" id="1_1fn1q"]
+[ext_resource type="Shader" uid="uid://00cvlveynfd6" path="res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader" id="1_1fn1q"]
 [ext_resource type="AudioStream" uid="uid://b17pr112h08uf" path="res://JumpOfThePigeon/objetos/player/sounds/grunido.mp3" id="2_wiabv"]
-[ext_resource type="AudioStream" uid="uid://cmslkayw182nl" path="res://JumpOfThePigeon/objetos/Interface/saida.mp3" id="2_xc4rr"]
+[ext_resource type="AudioStream" uid="uid://cmslkayw182nl" path="res://JumpOfThePigeon/objetos/Interface/sons/saida.mp3" id="2_xc4rr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xc4rr"]
 shader = ExtResource("1_1fn1q")

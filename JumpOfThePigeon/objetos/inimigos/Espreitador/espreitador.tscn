@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmg8gaqu60dw0"]
 
-[ext_resource type="Script" uid="uid://caiibcaxm2ft5" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/espreitador.gd" id="1_wijxc"]
+[ext_resource type="Script" uid="uid://caiibcaxm2ft5" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/script/espreitador.gd" id="1_wijxc"]
 [ext_resource type="Texture2D" uid="uid://dx5x41yu6nuq7" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-0.png" id="2_thhd6"]
 [ext_resource type="Texture2D" uid="uid://dnk5h8pmroucs" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-1.png" id="3_7mtlc"]
 [ext_resource type="Texture2D" uid="uid://bkn7fm6am40gi" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/walk/pixil-frame-2.png" id="4_7ve7u"]

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://jbkj8l7e4h4g"
-path="res://.godot/imported/joentnt-talking-nya-1-291987.mp3-35458f49ed9ab6e7d057100e78160bed.mp3str"
+path="res://.godot/imported/joentnt-talking-nya-1-291987.mp3-86c2da59799aca998f4aabf11574b680.mp3str"
 
 [deps]
 
-source_file="res://JumpOfThePigeon/objetos/elementos/Placa/animacao/joentnt-talking-nya-1-291987.mp3"
-dest_files=["res://.godot/imported/joentnt-talking-nya-1-291987.mp3-35458f49ed9ab6e7d057100e78160bed.mp3str"]
+source_file="res://JumpOfThePigeon/objetos/elementos/placa/animacao/joentnt-talking-nya-1-291987.mp3"
+dest_files=["res://.godot/imported/joentnt-talking-nya-1-291987.mp3-86c2da59799aca998f4aabf11574b680.mp3str"]
 
 [params]
 
