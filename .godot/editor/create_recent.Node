@@ -1,4 +1,5 @@
 Node2D
+RigidBody2D
 AudioStreamPlayer2D
 CollisionShape2D
 Area2D
@@ -11,4 +12,3 @@ PanelContainer
 Label
 ColorRect
 CanvasLayer
-Control

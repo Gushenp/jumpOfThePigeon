@@ -38,9 +38,9 @@ limit_right = 2240
 limit_bottom = 448
 script = null
 
-[node name="camera_move" parent="." unique_id=1979925334 instance=ExtResource("4_dguv3")]
-
 [node name="map" type="Node2D" parent="." unique_id=850585338]
+
+[node name="camera_move" parent="map" unique_id=1979925334 instance=ExtResource("4_dguv3")]
 
 [node name="elementos_globais" type="Node2D" parent="map" unique_id=1002683570]
 
@@ -64,7 +64,7 @@ visibility_layer = 4
 position = Vector2(1265, 224)
 scale = Vector2(3.294271, 1)
 
-[node name="other_tilemap" parent="map/normal_map" unique_id=373199258 instance=ExtResource("6_g07ad")]
+[node name="normal_tilemap" parent="map/normal_map" unique_id=373199258 instance=ExtResource("6_g07ad")]
 
 [node name="luz_e_sombra" type="Node2D" parent="map/normal_map" unique_id=842279432]
 
@@ -145,13 +145,19 @@ stream = ExtResource("11_jg2ss")
 [node name="transições" type="Node2D" parent="." unique_id=969052579]
 
 [node name="Transições" parent="transições" unique_id=409224042 instance=ExtResource("14_ifug6")]
+visible = false
 
 [node name="ColorRect" parent="transições/Transições" index="0" unique_id=1042860171]
+visible = false
 color = Color(0.16, 0.09616, 0.0688, 1)
+
+[node name="sound" parent="transições/Transições" index="1" unique_id=1055497455]
+visible = false
 
 [node name="saída" type="Area2D" parent="transições" unique_id=1700254749]
 position = Vector2(2148, 162)
 
 [connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
 
+[editable path="map/normal_map/normal_tilemap"]
 [editable path="transições/Transições"]

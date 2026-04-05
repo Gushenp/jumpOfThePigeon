@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d1mnr3fn1n1ar"
-path="res://.godot/imported/nha 2.mp3-a457357a141864e4e443cbcda41d41ce.mp3str"
+path="res://.godot/imported/nha 2.mp3-6bf05dca71c296a4dc975827638d8aad.mp3str"
 
 [deps]
 
-source_file="res://JumpOfThePigeon/objetos/elementos/placa/sons/nha 2.mp3"
-dest_files=["res://.godot/imported/nha 2.mp3-a457357a141864e4e443cbcda41d41ce.mp3str"]
+source_file="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 2.mp3"
+dest_files=["res://.godot/imported/nha 2.mp3-6bf05dca71c296a4dc975827638d8aad.mp3str"]
 
 [params]
 

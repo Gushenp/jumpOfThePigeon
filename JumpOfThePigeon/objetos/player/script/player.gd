@@ -97,4 +97,38 @@ func _random_pitch_audio():
 	aterrisar_sound.pitch_scale = randf_range(0.8, 1.1)
 	aterrisar_ambiente.pitch_scale = randf_range(0.9, 1.1)
 
-# ====== alterar flash entre mundos =====
+#==================================
+# ==== Desativar e ativar player ====
+#==================================
+func _desativar_player():
+	player.get_node("AnimatedSprite2D").hide()
+	player.get_node("CollisionShape2D").disabled = true
+
+func _reativar_realidade():
+	player.get_node("AnimatedSprite2D").hide()
+	player.get_node("CollisionShape2D").disabled = false
+
+#==================================
+# ==== Desativar e ativar sons ====
+#==================================
+func _desativar_sons():
+	for child in player.get_children():
+		_desativar_sons_recursivo(child)
+
+func _desativar_sons_recursivo(node):
+	if node is AudioStreamPlayer:
+		node.volume_db = -200
+		
+	for child in node.get_children():
+		_desativar_sons_recursivo(child)
+
+func _reativar_sons():
+	for child in player.get_children():
+		_reativar_sons_recursivo(child)
+
+func _reativar_sons_recursivo(node):
+	if node is AudioStreamPlayer:
+		node.volume_db = 0
+		
+	for child in node.get_children():
+		_reativar_sons_recursivo(child)

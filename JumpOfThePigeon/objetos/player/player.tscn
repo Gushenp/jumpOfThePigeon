@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://dithipif5qr6i"]
 
-[ext_resource type="Script" uid="uid://c6t5lc0q68740" path="res://JumpOfThePigeon/objetos/player/script/player.gd" id="1_com50"]
 [ext_resource type="Texture2D" uid="uid://fs42iaeshah3" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-0.png" id="2_attjo"]
 [ext_resource type="Texture2D" uid="uid://bxspintn6bgxc" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-0.png" id="2_xhjk0"]
 [ext_resource type="Texture2D" uid="uid://ckfxhlk68qguu" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-1.png" id="3_727ys"]
@@ -12,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cqkusqlhayga3" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-4.png" id="6_a1wa5"]
 [ext_resource type="Texture2D" uid="uid://bew4ypm75vj74" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-4.png" id="6_xp6bb"]
 [ext_resource type="AudioStream" uid="uid://cjvaxkdi4ied2" path="res://JumpOfThePigeon/objetos/player/sounds/jump.mp3" id="10_kv37g"]
-[ext_resource type="Script" uid="uid://r4txumlmj7bn" path="res://JumpOfThePigeon/objetos/player/script/eliminacao.gd" id="12_fpr4d"]
+[ext_resource type="Script" uid="uid://c6t5lc0q68740" path="res://JumpOfThePigeon/objetos/player/script/player.gd" id="12_fpr4d"]
 [ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/objetos/player/sounds/aterrisar_ambiente.mp3" id="13_eayco"]
 [ext_resource type="AudioStream" uid="uid://cy2wf07oqycv4" path="res://JumpOfThePigeon/objetos/player/sounds/walking.mp3" id="14_sxe8r"]
 
@@ -73,7 +72,7 @@ size = Vector2(20, 21)
 
 [node name="player" type="CharacterBody2D" unique_id=1303017769]
 z_index = 2
-script = ExtResource("1_com50")
+script = ExtResource("12_fpr4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=456560402]
 light_mask = 4
@@ -106,7 +105,6 @@ stream = ExtResource("14_sxe8r")
 [node name="eliminacao" type="Area2D" parent="." unique_id=1659849784]
 collision_layer = 128
 collision_mask = 128
-script = ExtResource("12_fpr4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="eliminacao" unique_id=1064817488]
 position = Vector2(0.5, -5)
