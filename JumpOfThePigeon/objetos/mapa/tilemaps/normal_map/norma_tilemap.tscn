@@ -236,4 +236,5 @@ tile_set = SubResource("TileSet_01sad")
 
 [node name="arbustos" type="TileMapLayer" parent="." unique_id=1198152538]
 self_modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
+z_index = 1
 tile_set = SubResource("TileSet_36l22")

@@ -37,3 +37,8 @@ func _change_reality():
 		is_in_normal_map = true
 		other_map._reativar_realidade()
 		normal_map._reativar_realidade()
+
+func _on_saída_body_entered(body: Node2D) -> void:
+	if body == player:
+		transicao._animacao_fade_out()
+	pass 
