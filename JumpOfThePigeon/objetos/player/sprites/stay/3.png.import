@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bew4ypm75vj74"
-path="res://.godot/imported/pixil-frame-4.png-01c34b9cc4e04908109c04621785c1f5.ctex"
+uid="uid://bqwpb6ulx55jt"
+path="res://.godot/imported/3.png-e6310d04a4d3d179bb050518ec3c0580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-4.png"
-dest_files=["res://.godot/imported/pixil-frame-4.png-01c34b9cc4e04908109c04621785c1f5.ctex"]
+source_file="res://JumpOfThePigeon/objetos/player/sprites/stay/3.png"
+dest_files=["res://.godot/imported/3.png-e6310d04a4d3d179bb050518ec3c0580.ctex"]
 
 [params]
 

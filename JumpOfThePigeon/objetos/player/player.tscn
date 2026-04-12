@@ -1,17 +1,19 @@
 [gd_scene format=4 uid="uid://dithipif5qr6i"]
 
+[ext_resource type="Texture2D" uid="uid://cjtj2x7yc0u3h" path="res://JumpOfThePigeon/objetos/player/sprites/jump/pixil-frame-0.png" id="2_anepf"]
 [ext_resource type="Texture2D" uid="uid://fs42iaeshah3" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-0.png" id="2_attjo"]
-[ext_resource type="Texture2D" uid="uid://bxspintn6bgxc" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-0.png" id="2_xhjk0"]
-[ext_resource type="Texture2D" uid="uid://ckfxhlk68qguu" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-1.png" id="3_727ys"]
 [ext_resource type="Texture2D" uid="uid://c70mcuspwct1i" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-1.png" id="3_u10x1"]
-[ext_resource type="Texture2D" uid="uid://bulwn3634sp4m" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-2.png" id="4_eayco"]
+[ext_resource type="Texture2D" uid="uid://ixet8rymtuho" path="res://JumpOfThePigeon/objetos/player/sprites/jump/pixil-frame-2.png" id="3_yy4kl"]
+[ext_resource type="Texture2D" uid="uid://c4b3vp0wnnn2f" path="res://JumpOfThePigeon/objetos/player/sprites/jump/pixil-frame-1.png" id="4_57twl"]
 [ext_resource type="Texture2D" uid="uid://oul13mhk0scg" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-2.png" id="4_xhjk0"]
 [ext_resource type="Texture2D" uid="uid://cf8eh4lffv0hb" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-3.png" id="5_727ys"]
-[ext_resource type="Texture2D" uid="uid://ijpwsvm4mmq7" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-3.png" id="5_sxe8r"]
+[ext_resource type="Texture2D" uid="uid://ca6pf6e8tiyof" path="res://JumpOfThePigeon/objetos/player/sprites/stay/1.png" id="5_xthc6"]
+[ext_resource type="Texture2D" uid="uid://bqwpb6ulx55jt" path="res://JumpOfThePigeon/objetos/player/sprites/stay/3.png" id="6_80vxn"]
 [ext_resource type="Texture2D" uid="uid://cqkusqlhayga3" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-4.png" id="6_a1wa5"]
-[ext_resource type="Texture2D" uid="uid://bew4ypm75vj74" path="res://JumpOfThePigeon/objetos/player/sprites/stay/pixil-frame-4.png" id="6_xp6bb"]
+[ext_resource type="Texture2D" uid="uid://cku4ma4imwmtr" path="res://JumpOfThePigeon/objetos/player/sprites/stay/4.png" id="7_g7xo6"]
 [ext_resource type="AudioStream" uid="uid://cjvaxkdi4ied2" path="res://JumpOfThePigeon/objetos/player/sounds/jump.mp3" id="10_kv37g"]
 [ext_resource type="Script" uid="uid://c6t5lc0q68740" path="res://JumpOfThePigeon/objetos/player/script/player.gd" id="12_fpr4d"]
+[ext_resource type="AudioStream" uid="uid://dpxqe3vt1w668" path="res://JumpOfThePigeon/objetos/player/sounds/flying.mp3" id="13_80vxn"]
 [ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/objetos/player/sounds/aterrisar_ambiente.mp3" id="13_eayco"]
 [ext_resource type="AudioStream" uid="uid://cy2wf07oqycv4" path="res://JumpOfThePigeon/objetos/player/sounds/walking.mp3" id="14_sxe8r"]
 
@@ -22,23 +24,45 @@ size = Vector2(11, 27.5)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_xhjk0")
+"texture": ExtResource("2_anepf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_727ys")
+"texture": ExtResource("3_yy4kl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_eayco")
+"texture": ExtResource("2_anepf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_sxe8r")
+"texture": ExtResource("3_yy4kl")
+}],
+"loop": false,
+"name": &"fly",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("4_57twl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_xp6bb")
+"texture": ExtResource("3_yy4kl")
+}],
+"loop": false,
+"name": &"pular",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xthc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_80vxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g7xo6")
 }],
 "loop": true,
 "name": &"stay",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -84,10 +108,14 @@ shape = SubResource("RectangleShape2D_jwwo0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169949617]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_oe2k1")
-animation = &"walk"
-frame_progress = 0.4696867
+animation = &"fly"
+frame = 3
+frame_progress = 1.0
 
 [node name="Audio" type="Node2D" parent="." unique_id=795854979]
+
+[node name="Flying" type="AudioStreamPlayer" parent="Audio" unique_id=1989163358]
+stream = ExtResource("13_80vxn")
 
 [node name="Aterrisar" type="AudioStreamPlayer" parent="Audio" unique_id=718744835]
 stream = SubResource("AudioStreamMP3_c2r1r")

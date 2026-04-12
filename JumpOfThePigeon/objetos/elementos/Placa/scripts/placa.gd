@@ -4,7 +4,10 @@ signal talk_placa
 
 # === import nodes =====
 @onready var animations = $animations
+@onready var animation_placa = $animations_placa
+@onready var animation_botao = $animations_botao
 @onready var dialog_box= $"dialog box"
+@onready var node = $"."
 
 # ==== control variables ====
 @onready var gravidade = 986.0
@@ -45,11 +48,23 @@ func _animations():
 		_jump()
 		_sounds_talk()
 		animations.play("talk")
-		dialog_box.get_node("Panel/AnimationPlayer").play("surgir_placa")
+		animation_placa.play("surgir_placa")
+		_animations_button()
 	else: 
 		animations.stop()
-		dialog_box.get_node("Panel/AnimationPlayer").play("sumir_placa")
+		animation_placa.play("sumir_placa")
+		get_tree().create_timer(0.2).timeout
+		animation_botao.stop()
 		
+func _animations_button():
+	if is_player_in:
+		if node.name == "frog plate":
+			animation_botao.play("pressionar_botao")
+		elif node.name == "frog plate2":
+			animation_botao.play("pressionar_duplo_botao")
+		elif node.name == "frog plate3":
+			animation_botao.play("pressionar_e_segurar")
+	
 func _sounds_talk():
 	var sounds = [
 		$sounds/Nha1,

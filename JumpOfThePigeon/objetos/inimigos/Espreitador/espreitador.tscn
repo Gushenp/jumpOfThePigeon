@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://caicyuwuke473" path="res://JumpOfThePigeon/objetos/inimigos/Espreitador/sprites/stay/pixil-frame-1.png" id="9_kkw1t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy22a"]
-size = Vector2(19, 20)
+size = Vector2(19, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_21qkx"]
 animations = [{
@@ -51,7 +51,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ve7u"]
-size = Vector2(26, 24.25)
+size = Vector2(27, 14)
 
 [node name="enemy" type="CharacterBody2D" unique_id=711407830]
 collision_layer = 3
@@ -61,7 +61,7 @@ script = ExtResource("1_wijxc")
 [node name="Timer" type="Timer" parent="." unique_id=142059328]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=274951522]
-position = Vector2(0.5, 6)
+position = Vector2(0.5, 4)
 shape = SubResource("RectangleShape2D_sy22a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1380061866]
@@ -75,6 +75,6 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill" unique_id=1644186110]
-position = Vector2(0, 3.875)
+position = Vector2(0.5, 9)
 shape = SubResource("RectangleShape2D_7ve7u")
 debug_color = Color(0.7633219, 0.2347421, 0.19946441, 0.41960785)

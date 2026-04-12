@@ -57,3 +57,8 @@ func _caminhar():
 func _gravity(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+
+signal kill
+func _on_kill_body_shape_entered(body: CharacterBody2D) -> void:
+	emit_signal("kill")
+	pass # Replace with function body.

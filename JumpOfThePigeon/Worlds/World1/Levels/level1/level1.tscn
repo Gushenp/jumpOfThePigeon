@@ -92,6 +92,35 @@ volume_db = -10.0
 [node name="frog plate" parent="map/elementos_globais/placas" unique_id=2078593262 instance=ExtResource("11_74sll")]
 position = Vector2(235, 242)
 
+[node name="frog plate2" parent="map/elementos_globais/placas" unique_id=728457014 instance=ExtResource("11_74sll")]
+position = Vector2(815, 305)
+
+[node name="dialog box" parent="map/elementos_globais/placas/frog plate2" index="3" unique_id=1889055216]
+offset_left = -77.0
+offset_right = -77.0
+
+[node name="Label" parent="map/elementos_globais/placas/frog plate2/dialog box/VBoxContainer" parent_id_path=PackedInt32Array(728457014, 1375366369) index="0" unique_id=988161412]
+text = "Duplo pulo com"
+
+[node name="frog plate3" parent="map/elementos_globais/placas" unique_id=286260939 instance=ExtResource("11_74sll")]
+position = Vector2(1368, 208)
+
+[node name="dialog box" parent="map/elementos_globais/placas/frog plate3" index="3" unique_id=1889055216]
+offset_left = -77.0
+offset_right = -77.0
+
+[node name="Panel" parent="map/elementos_globais/placas/frog plate3/dialog box" index="0" unique_id=637187432]
+offset_left = -5.0
+offset_right = 76.0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" parent="map/elementos_globais/placas/frog plate3/dialog box" index="1" unique_id=1375366369]
+offset_left = -10.0
+offset_right = 81.0
+
+[node name="Label" parent="map/elementos_globais/placas/frog plate3/dialog box/VBoxContainer" index="0" unique_id=988161412]
+text = "Você também pode planar!!!"
+
 [node name="normal_map" type="Node2D" parent="map" unique_id=1634348116]
 modulate = Color(0.9164794, 0.8136174, 0.6144423, 1)
 light_mask = 1023
@@ -156,7 +185,7 @@ energy = 0.2
 texture = SubResource("GradientTexture2D_sk2gc")
 
 [node name="PointLight2D4" type="PointLight2D" parent="map/normal_map/luz_e_sombra/pontos_reflexo" unique_id=237754288]
-position = Vector2(1415, 197)
+position = Vector2(1412.0002, 197.00003)
 rotation = -0.344769
 scale = Vector2(9.557408, 11.003679)
 energy = 0.2
@@ -284,6 +313,9 @@ debug_color = Color(0, 0.5950001, 0.7, 0.7490196)
 [connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
 
 [editable path="map/camera_move"]
+[editable path="map/elementos_globais/placas/frog plate"]
+[editable path="map/elementos_globais/placas/frog plate2"]
+[editable path="map/elementos_globais/placas/frog plate3"]
 [editable path="map/normal_map/tileMap"]
 [editable path="map/other_map/tileMap"]
 [editable path="transições/Transições"]

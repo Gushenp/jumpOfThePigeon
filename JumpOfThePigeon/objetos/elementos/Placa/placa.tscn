@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bp4mhslboyajf" path="res://JumpOfThePigeon/objetos/elementos/Placa/scripts/placa.gd" id="1_t0g6y"]
 [ext_resource type="Texture2D" uid="uid://ne1arsou7k4a" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/corpo/pixil-frame-1.png" id="2_t0g6y"]
 [ext_resource type="AudioStream" uid="uid://dxf2g5v545cpm" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 3.mp3" id="4_c2r1r"]
+[ext_resource type="Texture2D" uid="uid://dgirpkilf1xod" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/caixa Dialogo/pixil-frame-11.png" id="4_fnm2m"]
 [ext_resource type="AudioStream" uid="uid://dwvjw8bagmstn" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 1.mp3" id="5_adgxl"]
+[ext_resource type="Texture2D" uid="uid://bhxyb83aeasja" path="res://JumpOfThePigeon/objetos/elementos/Placa/Sprites/caixa Dialogo/pixil-frame-10.png" id="5_qx2wn"]
 [ext_resource type="AudioStream" uid="uid://d1mnr3fn1n1ar" path="res://JumpOfThePigeon/objetos/elementos/Placa/sons/nha 2.mp3" id="6_yt0lu"]
 [ext_resource type="AudioStream" uid="uid://3348720phrp8" path="res://JumpOfThePigeon/objetos/player/sounds/aterrisar_ambiente.mp3" id="7_adgxl"]
 
@@ -28,220 +30,152 @@ size = Vector2(20, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_252rt"]
 size = Vector2(228, 130)
 
+[sub_resource type="SystemFont" id="SystemFont_uahgf"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7lflt"]
+font = SubResource("SystemFont_uahgf")
+font_size = 5
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_offset = Vector2(0.5, 0.5)
+
 [sub_resource type="Animation" id="Animation_c2r1r"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale:x")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale:y")
+tracks/1/path = NodePath("botao_space:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:r")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:g")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:modulate:b")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:modulate:a")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(2),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_fnm2m")]
 }
 
-[sub_resource type="Animation" id="Animation_yt0lu"]
+[sub_resource type="Animation" id="Animation_w51ac"]
 resource_name = "sumir_placa"
-length = 0.3
-tracks/0/type = "bezier"
+length = 0.2
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale:x")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:r")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:g")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:modulate:b")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:modulate:a")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
 }
 
-[sub_resource type="Animation" id="Animation_adgxl"]
+[sub_resource type="Animation" id="Animation_fnm2m"]
 resource_name = "surgir_placa"
-length = 0.3
-tracks/0/type = "bezier"
+length = 0.2
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale:x")
+tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1e-05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:r")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:g")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:modulate:b")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:modulate:a")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yt0lu"]
 _data = {
 &"RESET": SubResource("Animation_c2r1r"),
-&"sumir_placa": SubResource("Animation_yt0lu"),
-&"surgir_placa": SubResource("Animation_adgxl")
+&"sumir_placa": SubResource("Animation_w51ac"),
+&"surgir_placa": SubResource("Animation_fnm2m")
+}
+
+[sub_resource type="Animation" id="Animation_qx2wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog box/botao_space:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_fnm2m")]
+}
+
+[sub_resource type="Animation" id="Animation_uahgf"]
+resource_name = "pressionar_botao"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog box/botao_space:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("5_qx2wn"), ExtResource("4_fnm2m")]
+}
+
+[sub_resource type="Animation" id="Animation_7lflt"]
+resource_name = "pressionar_duplo_botao"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog box/botao_space:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 0.7, 0.83),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_qx2wn"), ExtResource("4_fnm2m"), ExtResource("5_qx2wn"), ExtResource("4_fnm2m")]
+}
+
+[sub_resource type="Animation" id="Animation_7mmyt"]
+resource_name = "pressionar_e_segurar"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog box/botao_space:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.34, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_qx2wn"), ExtResource("4_fnm2m"), ExtResource("4_fnm2m")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7lflt"]
+_data = {
+&"RESET": SubResource("Animation_qx2wn"),
+&"pressionar_botao": SubResource("Animation_uahgf"),
+&"pressionar_duplo_botao": SubResource("Animation_7lflt"),
+&"pressionar_e_segurar": SubResource("Animation_7mmyt")
 }
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_c2r1r"]
@@ -266,25 +200,57 @@ shape = SubResource("RectangleShape2D_t0g6y")
 [node name="entered_collision" type="Area2D" parent="." unique_id=918798547]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entered_collision" unique_id=1026733629]
-position = Vector2(1, 0)
+position = Vector2(6, 2)
 shape = SubResource("RectangleShape2D_252rt")
 debug_color = Color(0.55419546, 0.5626215, 0, 0.41960785)
 
 [node name="dialog box" type="Control" parent="." unique_id=1889055216]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 9.0
+offset_top = -48.0
+offset_right = 9.0
+offset_bottom = -48.0
+pivot_offset = Vector2(34, 15)
+metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Panel" parent="dialog box" unique_id=754325356]
+[node name="Panel" type="Panel" parent="dialog box" unique_id=637187432]
 layout_mode = 0
-offset_left = 17.0
-offset_top = -57.0
-offset_right = 94.0
-offset_bottom = -17.0
+offset_right = 68.0
+offset_bottom = 30.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="dialog box/Panel" unique_id=1208090998]
+[node name="VBoxContainer" type="VBoxContainer" parent="dialog box" unique_id=1375366369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 1.0
+offset_right = 65.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="dialog box/VBoxContainer" unique_id=988161412]
+layout_mode = 2
+text = "Você pode pular com"
+label_settings = SubResource("LabelSettings_7lflt")
+horizontal_alignment = 1
+
+[node name="botao_space" type="TextureRect" parent="dialog box" unique_id=682670986]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 3.0
+offset_right = 51.0
+offset_bottom = 35.0
+texture = ExtResource("4_fnm2m")
+
+[node name="animations_placa" type="AnimationPlayer" parent="." unique_id=1208090998]
+root_node = NodePath("../dialog box")
 libraries/ = SubResource("AnimationLibrary_yt0lu")
+
+[node name="animations_botao" type="AnimationPlayer" parent="." unique_id=847394287]
+libraries/ = SubResource("AnimationLibrary_7lflt")
 
 [node name="sounds" type="Node2D" parent="." unique_id=179600586]
 
