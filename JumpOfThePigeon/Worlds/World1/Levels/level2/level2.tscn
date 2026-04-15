@@ -176,7 +176,7 @@ position = Vector2(58.25, 44)
 shape = SubResource("RectangleShape2D_movij")
 debug_color = Color(0, 0.5950001, 0.7, 0.7490196)
 
-[connection signal="kill" from="map/normal_map/elementos/inimigos/enemy" to="player" method="_on_enemy_kill"]
+[connection signal="kill" from="map/normal_map/elementos/inimigos/enemy" to="." method="_on_enemy_kill"]
 [connection signal="body_entered" from="transições/saída" to="." method="_on_saída_body_entered"]
 
 [editable path="map/camera_move"]

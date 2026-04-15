@@ -54,8 +54,9 @@ animations = [{
 size = Vector2(27, 14)
 
 [node name="enemy" type="CharacterBody2D" unique_id=711407830]
-collision_layer = 3
-collision_mask = 3
+z_index = 2
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_wijxc")
 
 [node name="Timer" type="Timer" parent="." unique_id=142059328]
@@ -75,6 +76,11 @@ collision_layer = 128
 collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kill" unique_id=1644186110]
+light_mask = 0
+visibility_layer = 5
+z_index = 2
 position = Vector2(0.5, 9)
 shape = SubResource("RectangleShape2D_7ve7u")
 debug_color = Color(0.7633219, 0.2347421, 0.19946441, 0.41960785)
+
+[connection signal="body_entered" from="kill" to="." method="_on_kill_body_entered"]

@@ -115,9 +115,8 @@ func _random_pitch_audio():
 	aterrisar_ambiente.pitch_scale = randf_range(0.9, 1.1)
 
 # ======= eliminar player =======
-func _on_enemy_kill() -> void:
-	print("encostou")
-	pass
+func _eliminar_player():
+	print("morte bleaahhh")
 
 #==================================
 # ==== Desativar e ativar player ====

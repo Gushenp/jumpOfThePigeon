@@ -59,6 +59,6 @@ func _gravity(delta):
 		velocity.y += GRAVITY * delta
 
 signal kill
-func _on_kill_body_shape_entered(body: CharacterBody2D) -> void:
+func _on_kill_body_entered(body: Node2D) -> void:
 	emit_signal("kill")
-	pass # Replace with function body.
+	pass

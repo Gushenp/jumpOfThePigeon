@@ -45,3 +45,8 @@ func _on_saída_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(2.3).timeout
 		get_tree().change_scene_to_file("res://JumpOfThePigeon/Worlds/World1/Levels/level2/level2.tscn")
 	pass 
+
+# ==== elimitar player ====
+func _on_enemy_kill() -> void:
+	player._eliminar_player()
+	pass 

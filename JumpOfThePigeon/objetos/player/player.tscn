@@ -96,6 +96,8 @@ size = Vector2(20, 21)
 
 [node name="player" type="CharacterBody2D" unique_id=1303017769]
 z_index = 2
+collision_layer = 133
+collision_mask = 133
 script = ExtResource("12_fpr4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=456560402]
