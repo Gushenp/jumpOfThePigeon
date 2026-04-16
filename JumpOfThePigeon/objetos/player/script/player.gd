@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var player = $"."
 
 #arquivos externos
-@onready var animacaoPlayer = $AnimatedSprite2D
+@onready var animacaoPlayerFrame = $AnimatedSprite2D
 @onready var jump_sound = $Audio/Jump
 @onready var aterrisar_sound = $Audio/Aterrisar
 @onready var aterrisar_ambiente = $Audio/AterrisarAmbiente
@@ -16,6 +16,7 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY_PRIMARY = -300
 @export var JUMP_VELOCITY_SECONDARY = -300
 @export var posicao_inicial : Vector2
+var isDeath = false
 var gravidade = 986.0
 var gravidade_planando = 200.0
 # ====== Processos iniciais ========
@@ -59,11 +60,11 @@ func _player_jump():
 # ====== Movimentação Player =======
 func _player_direction(delta):
 	var direction = Input.get_axis("left", "right")
-	
-	if direction != 0:
-		velocity.x = direction * SPEED
-	else: 
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if isDeath == false: 
+		if direction != 0:
+			velocity.x = direction * SPEED
+		else: 
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 # ======= Mudar de Realidade =======
 signal change_reality
@@ -75,28 +76,28 @@ func _player_change_reality():
 func _animacao_player():
 	if not player.is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			animacaoPlayer.play("pular")
+			animacaoPlayerFrame.play("pular")
 	
 	if not player.is_on_floor() and Input.is_action_pressed("jump") and pulos_restantes == 0:
-		animacaoPlayer.play("fly")
+		animacaoPlayerFrame.play("fly")
 			
 	if player.is_on_floor():
 		if Input.is_action_just_pressed("jump"):
-			animacaoPlayer.play("pular")
+			animacaoPlayerFrame.play("pular")
 		else: 
 			if Input.is_action_pressed("right"):
-				animacaoPlayer.flip_h = 0
-				animacaoPlayer.play("walk")
+				animacaoPlayerFrame.flip_h = 0
+				animacaoPlayerFrame.play("walk")
 			elif  Input.is_action_pressed("left"):
-				animacaoPlayer.flip_h = 1
-				animacaoPlayer.play("walk")
+				animacaoPlayerFrame.flip_h = 1
+				animacaoPlayerFrame.play("walk")
 			else: 
-				animacaoPlayer.play("stay")
+				animacaoPlayerFrame.play("stay")
 	else:
 		if Input.is_action_pressed("right"):
-			animacaoPlayer.flip_h = 0
+			animacaoPlayerFrame.flip_h = 0
 		elif  Input.is_action_pressed("left"):
-			animacaoPlayer.flip_h = 1
+			animacaoPlayerFrame.flip_h = 1
 
 # ====== audios player ============
 var estava_no_chao = false
@@ -116,10 +117,26 @@ func _random_pitch_audio():
 
 # ======= eliminar player =======
 func _eliminar_player():
-	print("morte bleaahhh")
+	_apply_knockback()
+	await get_tree().create_timer(3.0).timeout
+	get_tree().reload_current_scene()
+	
+func _apply_knockback():
+	player.rotation_degrees = 180
+	var direction_player = (global_position).normalized()
+	var direction = Input.get_axis("left", "right")
+	
+	isDeath = true
+	_desativar_colisoes()
+	
+	velocity.y = -400
+	if direction == 1.0:
+		velocity.x = direction_player.x * -100
+	elif direction == -1.0:
+		velocity.x = direction_player.x * 100
 
 #==================================
-# ==== Desativar e ativar player ====
+# ==== Desativar e ativar funcionalidades player ====
 #==================================
 func _desativar_player():
 	player.get_node("AnimatedSprite2D").hide()
@@ -130,6 +147,9 @@ func _reativar_realidade():
 	player.get_node("AnimatedSprite2D").hide()
 	player.get_node("CollisionShape2D").disabled = false
 	player._reativar_sons()
+	
+func _desativar_colisoes():
+	$CollisionShape2D.queue_free()
 #==================================
 # ==== Desativar e ativar sons ====
 #==================================

@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cjtj2x7yc0u3h" path="res://JumpOfThePigeon/objetos/player/sprites/jump/pixil-frame-0.png" id="2_anepf"]
 [ext_resource type="Texture2D" uid="uid://fs42iaeshah3" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-0.png" id="2_attjo"]
+[ext_resource type="Texture2D" uid="uid://bg5t8svnv6c3" path="res://JumpOfThePigeon/objetos/player/sprites/death/pixil-frame-0.png" id="2_fgato"]
+[ext_resource type="Texture2D" uid="uid://dna86cocwuluf" path="res://JumpOfThePigeon/objetos/player/sprites/death/pixil-frame-1.png" id="3_rdi2u"]
 [ext_resource type="Texture2D" uid="uid://c70mcuspwct1i" path="res://JumpOfThePigeon/objetos/player/sprites/walk/pixil-frame-1.png" id="3_u10x1"]
 [ext_resource type="Texture2D" uid="uid://ixet8rymtuho" path="res://JumpOfThePigeon/objetos/player/sprites/jump/pixil-frame-2.png" id="3_yy4kl"]
 [ext_resource type="Texture2D" uid="uid://c4b3vp0wnnn2f" path="res://JumpOfThePigeon/objetos/player/sprites/jump/pixil-frame-1.png" id="4_57twl"]
@@ -22,6 +24,17 @@ size = Vector2(11, 27.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oe2k1"]
 animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_fgato")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rdi2u")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_anepf")
@@ -110,9 +123,7 @@ shape = SubResource("RectangleShape2D_jwwo0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1169949617]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_oe2k1")
-animation = &"fly"
-frame = 3
-frame_progress = 1.0
+animation = &"death"
 
 [node name="Audio" type="Node2D" parent="." unique_id=795854979]
 

@@ -49,4 +49,5 @@ func _on_saída_body_entered(body: Node2D) -> void:
 # ==== elimitar player ====
 func _on_enemy_kill() -> void:
 	player._eliminar_player()
+	transicao._animacao_fade_out()
 	pass 

@@ -1,5 +1,5 @@
-Node2D
 AnimationPlayer
+Node2D
 AnimationTree
 Panel
 TextureRect
@@ -12,4 +12,3 @@ VBoxContainer
 CollisionShape2D
 Area2D
 ParallaxLayer
-Sprite2D

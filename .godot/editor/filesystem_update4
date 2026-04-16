@@ -1,11 +1,1 @@
-res://JumpOfThePigeon/objetos/inimigos/Espreitador/script/espreitador.gd
-res://JumpOfThePigeon/objetos/inimigos/Espreitador/espreitador.tscn
-res://JumpOfThePigeon/objetos/mapa/tilemaps/background.gdshader
-res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_x.gdshader
-res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/gramineas_y.gdshader
-res://JumpOfThePigeon/objetos/mapa/shaders/Map_tiles/pendentes.gdshader
-res://JumpOfThePigeon/objetos/Interface/shaders/transicao.gdshader
-res://JumpOfThePigeon/objetos/player/player.tscn
-res://JumpOfThePigeon/Worlds/World1/Levels/level2/level2.tscn
 res://JumpOfThePigeon/objetos/player/script/player.gd
-res://JumpOfThePigeon/Worlds/World1/Levels/level2/level2.gd

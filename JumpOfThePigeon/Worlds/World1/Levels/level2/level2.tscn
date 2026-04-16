@@ -162,7 +162,6 @@ stream = ExtResource("16_yx52s")
 script = ExtResource("17_15tax")
 
 [node name="Transições" parent="transições" unique_id=409224042 instance=ExtResource("18_kg1kv")]
-visible = false
 
 [node name="ColorRect" parent="transições/Transições" index="0" unique_id=1042860171]
 color = Color(0.16, 0.09616, 0.0688, 1)
