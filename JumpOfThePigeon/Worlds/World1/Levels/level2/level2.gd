@@ -23,6 +23,7 @@ func _start():
 	player._desativar_sons()
 	transicao._animacao_fade_in()
 	menager_music_world1._entrada_musica()
+	MenagerBackgroundtransition.hide()
 	await get_tree().create_timer(1.5).timeout
 	elementos_globais._reativar_areas()
 	elementos_globais._reativar_sons()

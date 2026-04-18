@@ -74,31 +74,31 @@ func _player_change_reality():
 
 # ======= animações ==========
 func _animacao_player():
-	if not player.is_on_floor():
-		if Input.is_action_just_pressed("jump"):
-			animacaoPlayerFrame.play("pular")
-	
-	if not player.is_on_floor() and Input.is_action_pressed("jump") and pulos_restantes == 0:
-		animacaoPlayerFrame.play("fly")
-			
-	if player.is_on_floor():
-		if Input.is_action_just_pressed("jump"):
-			animacaoPlayerFrame.play("pular")
-		else: 
+	if isDeath == false:
+		if not player.is_on_floor():
+			if Input.is_action_just_pressed("jump"):
+				animacaoPlayerFrame.play("pular")
+		
+		if not player.is_on_floor() and Input.is_action_pressed("jump") and pulos_restantes == 0:
+			animacaoPlayerFrame.play("fly")
+				
+		if player.is_on_floor():
+			if Input.is_action_just_pressed("jump"):
+				animacaoPlayerFrame.play("pular")
+			else: 
+				if Input.is_action_pressed("right"):
+					animacaoPlayerFrame.flip_h = 0
+					animacaoPlayerFrame.play("walk")
+				elif  Input.is_action_pressed("left"):
+					animacaoPlayerFrame.flip_h = 1
+					animacaoPlayerFrame.play("walk")
+				else: 
+					animacaoPlayerFrame.play("stay")
+		else:
 			if Input.is_action_pressed("right"):
 				animacaoPlayerFrame.flip_h = 0
-				animacaoPlayerFrame.play("walk")
 			elif  Input.is_action_pressed("left"):
 				animacaoPlayerFrame.flip_h = 1
-				animacaoPlayerFrame.play("walk")
-			else: 
-				animacaoPlayerFrame.play("stay")
-	else:
-		if Input.is_action_pressed("right"):
-			animacaoPlayerFrame.flip_h = 0
-		elif  Input.is_action_pressed("left"):
-			animacaoPlayerFrame.flip_h = 1
-
 # ====== audios player ============
 var estava_no_chao = false
 func _audio_player():
@@ -117,11 +117,11 @@ func _random_pitch_audio():
 
 # ======= eliminar player =======
 func _eliminar_player():
-	_apply_knockback()
+	_apply_death()
 	await get_tree().create_timer(3.0).timeout
 	get_tree().reload_current_scene()
 	
-func _apply_knockback():
+func _apply_death():
 	player.rotation_degrees = 180
 	var direction_player = (global_position).normalized()
 	var direction = Input.get_axis("left", "right")
@@ -134,6 +134,9 @@ func _apply_knockback():
 		velocity.x = direction_player.x * -100
 	elif direction == -1.0:
 		velocity.x = direction_player.x * 100
+		
+	player.z_index = 10
+	animacaoPlayerFrame.play("death")
 
 #==================================
 # ==== Desativar e ativar funcionalidades player ====
